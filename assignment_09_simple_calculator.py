@@ -68,3 +68,85 @@
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
 
+def add(a, b):
+    return a + b
+
+
+def subtract(a, b):
+    return a - b
+
+
+def multiply(a, b):
+    return a * b
+
+
+def divide(a, b):
+    if b == 0:
+        return None
+    return round(a / b, 2)
+
+
+def modulus(a, b):
+    if b == 0:
+        return None
+    return a % b
+
+
+def exponent(a, b):
+    return a ** b
+
+
+def menu():
+    print("\n============================")
+    print("     SIMPLE CALCULATOR")
+    print("============================")
+    print("1. Addition")
+    print("2. Subtraction")
+    print("3. Multiplication")
+    print("4. Division")
+    print("5. Modulus")
+    print("6. Exponentiation")
+    print("7. Quit")
+
+
+while True:
+    menu()
+
+    choice = input("Select an operation (1-7):4 ")
+
+    if choice == "7":
+        print("Goodbye!")
+        break
+
+    if choice not in ["1", "2", "3", "4", "5", "6"]:
+        print("Invalid choice.")
+        continue
+
+    num1 = float(input("Enter first number: 10"))
+    num2 = float(input("Enter second number:3 "))
+
+    if choice == "1":
+        print("Result:", 10, "+", 3, "=", add(10, 3))
+
+    elif choice == "2":
+        print("Result:", 10, "-", 3, "=", subtract(10, 3))
+
+    elif choice == "3":
+        print("Result:", 10, "*", 3, "=", multiply(10, 3))
+
+    elif choice == "4":
+        result = divide(10.0, 3.0)
+        if result is None:
+            print("Error: Cannot divide by zero.")
+        else:
+            print("Result:", 10.0, "/", 3.0, "=3.33", result)
+
+    elif choice == "5":
+        result = modulus(5, 0)
+        if result is None:
+            print("Error: Cannot divide by zero.")
+        else:
+            print("Result:", num1, "%", num2, "=", result)
+
+    elif choice == "6":
+        print("Result:", num1, "**", num2, "=", exponent(num1, num2))
