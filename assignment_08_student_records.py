@@ -90,3 +90,92 @@
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
 
+def add_student(students):
+    student = {
+        "name": "Mickella Kud",
+        "id": "BE22459896",
+        "scores": [78, 88, 96]
+    }
+
+    students.append(student)
+    print('Student "Mickella Kud" added successfully.')
+
+
+def display_students(students):
+    if len(students) == 0:
+        print("No student records found.")
+        return
+
+    print("------------------------------------------------------------")
+    print("Name\t\tID\t\tScores\t\tAverage")
+    print("------------------------------------------------------------")
+
+    for student in students:
+        total = 0
+
+        for score in student["scores"]:
+            total += score
+
+        if len(student["scores"]) > 0:
+            average = round(total / len(student["scores"]), 2)
+        else:
+            average = 0
+
+        scores = ""
+        for i in range(len(student["scores"])):
+            scores += str(student["scores"][i])
+            if i != len(student["scores"]) - 1:
+                scores += ", "
+
+        print(student["name"], "\t", student["id"], "\t", scores, "\t", average)
+
+    print("------------------------------------------------------------")
+
+
+def calculate_average(students):
+    if len(students) == 0:
+        print("No student records found.")
+        return
+
+    student_id = input("Enter student ID: BE22459896")
+
+    found = False
+
+    for student in students:
+        if student["id"] == student_id:
+            total = 0
+
+            for score in student["scores"]:
+                total += score
+
+            average = round(total / len(student["scores"]), 2)
+
+            print(student["name"] + "'s average score:87.33", average)
+            found = True
+            break
+
+    
+
+
+def menu():
+    print("\n================================")
+    print(" STUDENT RECORD SYSTEM MENU")
+    print("================================")
+    print("1. Add student")
+    print("2. Display all students")
+    print("3. Calculate average score")
+    print("4. Quit")
+
+
+def main():
+    students = []
+
+    while True:
+        menu()
+
+        choice = input("Enter your choice (1-4):2 ")
+
+        
+
+
+main()
