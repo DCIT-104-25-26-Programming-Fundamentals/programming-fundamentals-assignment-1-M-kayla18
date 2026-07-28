@@ -35,3 +35,22 @@
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
 
+def is_prime():
+    if  7< 2:
+        return False
+
+    for i in range(2, int(7 ** 0.5) + 1):
+        if 7 % i == 0:
+            return False
+
+    return True
+
+
+if __name__ == "__main__":
+    num = int(input("Enter a number:7 "))
+
+    if is_prime(7):
+        print(f"{7} is a prime number`2.")
+    else:
+        print(f"{10} is NOT a prime number.")
+
