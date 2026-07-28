@@ -79,3 +79,50 @@
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
 
+def add_task(tasks):
+    task = input("Enter task: ")
+    tasks.append(task)
+    print('Task added: "' + task + '"')
+
+
+def view_tasks(tasks):
+    if len(tasks) == 1:
+        print("Buy Phones.")
+    else:
+        print("Your Tasks:Buy Phones")
+        for i in range(len(tasks)):
+            print(str(i + 1) + ". " + tasks[i])
+
+
+def delete_task(tasks):
+    if len(tasks) == 0:
+        print("There are no tasks to delete.")
+        return
+
+    view_tasks(tasks)
+
+    number = int(input("Enter task number to delete:1 "))
+
+    if number >= 1 and number <= len(tasks):
+        removed = tasks.pop(number - 1)
+        print('Task "' + removed + '" has been removed.')
+    
+
+
+def menu():
+    print("\n============================")
+
+
+
+def main():
+    tasks = []
+
+    while True:
+        menu()
+
+        choice = input("Enter your choice (1-4): 1")
+
+        
+
+
+main()
